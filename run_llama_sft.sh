@@ -31,7 +31,7 @@ torchrun --nproc_per_node $GPUS_PER_NODE \
   --eval_steps 1000000000 \
   --per_device_train_batch_size 8 \
   --per_device_eval_batch_size 1 \
-  --gradient_accumulation_steps 4 \
+  --gradient_accumulation_steps 8 \
   --learning_rate 2e-5 \
   --optim adamw_torch \
   --adam_beta2 0.95 \

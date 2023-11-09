@@ -28,7 +28,7 @@ torchrun \
   --do_eval False \
   --evaluation_strategy no \
   --eval_steps 1000000000 \
-  --per_device_train_batch_size 1 \
+  --per_device_train_batch_size 8 \
   --per_device_eval_batch_size 1 \
   --gradient_accumulation_steps 8 \
   --learning_rate 1e-4 \
