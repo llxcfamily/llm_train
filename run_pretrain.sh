@@ -1,7 +1,7 @@
 TRAIN=./data/news-commentary.jsonl
 OUTPUT=./models/llama_pretrain
 
-export CUDA_VISIBLE_DEVICES=1,2
+export CUDA_VISIBLE_DEVICES=0,1
 export OMP_NUM_THREADS=1
 MASTER_ADDR=localhost
 MASTER_PORT=6000
@@ -20,6 +20,7 @@ torchrun \
   --master_addr $MASTER_ADDR \
   ./code/run_llama_pretrain.py \
   --model_name_or_path ./models/llama-7b-hf \
+  --tokenizer_name ./models/
   --train_file $TRAIN \
   --max_seq_length 2048 \
   --output_dir $OUTPUT \
@@ -30,12 +31,12 @@ torchrun \
   --per_device_train_batch_size 1 \
   --per_device_eval_batch_size 1 \
   --gradient_accumulation_steps 8 \
-  --learning_rate 2e-5 \
+  --learning_rate 1e-4 \
   --optim adamw_torch \
   --adam_beta2 0.95 \
   --weight_decay 0.1 \
   --warmup_ratio 0.1 \
-  --num_train_epochs 3 \
+  --num_train_epochs 2 \
   --lr_scheduler_type constant_with_warmup \
   --logging_first_step True \
   --logging_steps 10 \

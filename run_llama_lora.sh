@@ -1,9 +1,9 @@
-export CUDA_VISIBLE_DEVICES=1,2
+export CUDA_VISIBLE_DEVICES=0,1
 export OMP_NUM_THREADS=1
 
 TRAIN=./data/train_dummy.csv
 VAL=./data/train_dummy.csv
-OUTPUT=./models/llama_13b_sft_zero3
+OUTPUT=./models/llama_7b_sft_zero3
 MODEL_PATH=./models/llama-7b-hf
 
 log_path=./run_log/lora_1/

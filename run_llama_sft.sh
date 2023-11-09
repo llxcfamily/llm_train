@@ -4,7 +4,7 @@ TRAIN=./data/train_dummy.csv
 VAL=./data/train_dummy.csv
 OUTPUT=./models/llama_7b_full_ft
 
-export CUDA_VISIBLE_DEVICES=1,2
+export CUDA_VISIBLE_DEVICES=0,1
 export OMP_NUM_THREADS=1
 MASTER_ADDR=localhost
 MASTER_PORT=6000
